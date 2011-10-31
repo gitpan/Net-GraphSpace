@@ -2,7 +2,7 @@ package Net::GraphSpace;
 use Moose;
 use MooseX::Method::Signatures;
 
-our $VERSION = '0.0001'; # VERSION
+our $VERSION = '0.0002'; # VERSION
 
 use JSON qw(decode_json);
 use LWP::UserAgent;
@@ -84,7 +84,7 @@ Net::GraphSpace - API bindings for GraphSpace
 
 =head1 VERSION
 
-version 0.0001
+version 0.0002
 
 =head1 SYNOPSIS
 
@@ -136,8 +136,6 @@ Required:
 =item server
 
 The url of the server where GraphSpace is hosted.
-
-=item name
 
 =back
 

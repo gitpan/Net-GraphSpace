@@ -2,7 +2,7 @@ NAME
     Net::GraphSpace - API bindings for GraphSpace
 
 VERSION
-    version 0.0001
+    version 0.0002
 
 SYNOPSIS
         use Net::GraphSpace;
@@ -46,8 +46,6 @@ ATTRIBUTES
     password
     server
         The url of the server where GraphSpace is hosted.
-
-    name
 
 METHODS
   new(%params)

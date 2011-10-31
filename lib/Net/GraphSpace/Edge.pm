@@ -26,7 +26,7 @@ Net::GraphSpace::Edge
 
 =head1 VERSION
 
-version 0.0001
+version 0.0002
 
 =head1 SYNOPSIS
 
