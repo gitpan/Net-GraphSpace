@@ -26,7 +26,7 @@ Net::GraphSpace::Node
 
 =head1 VERSION
 
-version 0.0003
+version 0.0004
 
 =head1 SYNOPSIS
 

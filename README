@@ -2,7 +2,7 @@ NAME
     Net::GraphSpace - API bindings for GraphSpace
 
 VERSION
-    version 0.0003
+    version 0.0004
 
 SYNOPSIS
         use Net::GraphSpace;
@@ -11,7 +11,7 @@ SYNOPSIS
         my $client = Net::GraphSpace->new(
             user     => 'bob',
             password => 'secret',
-            server   => 'http://foo.com'
+            host     => 'graphspace.org'
         );
         my $graph = Net::GraphSpace::Graph->new(name => 'yeast ppi');
         my $node1 = Net::GraphSpace::Node->new(id => 'node-a', label => 'A');
@@ -44,8 +44,12 @@ ATTRIBUTES
 
     user
     password
-    server
-        The url of the server where GraphSpace is hosted.
+    host
+
+    Optional:
+
+    port
+        Defaults to 80.
 
 METHODS
   new(%params)
