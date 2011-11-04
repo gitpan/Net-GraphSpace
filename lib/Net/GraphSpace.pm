@@ -2,7 +2,7 @@ package Net::GraphSpace;
 use Moose;
 use MooseX::Method::Signatures;
 
-our $VERSION = '0.0002'; # VERSION
+our $VERSION = '0.0003'; # VERSION
 
 use JSON qw(decode_json);
 use LWP::UserAgent;
@@ -84,7 +84,7 @@ Net::GraphSpace - API bindings for GraphSpace
 
 =head1 VERSION
 
-version 0.0002
+version 0.0003
 
 =head1 SYNOPSIS
 
@@ -97,10 +97,10 @@ version 0.0002
         server   => 'http://foo.com'
     );
     my $graph = Net::GraphSpace::Graph->new(name => 'yeast ppi');
-    my $node1 = Net::GraphSpace::Node->new(id => 1, label => 'A');
-    my $node2 = Net::GraphSpace::Node->new(id => 2, label => 'B');
+    my $node1 = Net::GraphSpace::Node->new(id => 'node-a', label => 'A');
+    my $node2 = Net::GraphSpace::Node->new(id => 'node-b', label => 'B');
     my $edge = Net::GraphSpace::Edge->new(
-        id => '1-2', source => 1, target => 2);
+        id => 'a-b', source => 'node-a', target => 'node-b');
     $graph->add_nodes([$node1, $node2]);
     $graph->add_edge($edge);
     $graph->add_node(Net::GraphSpace::Node->new(id => 3, label => 'C'));
