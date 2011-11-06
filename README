@@ -2,7 +2,7 @@ NAME
     Net::GraphSpace - API bindings for GraphSpace
 
 VERSION
-    version 0.0004
+    version 0.0005
 
 SYNOPSIS
         use Net::GraphSpace;
@@ -37,7 +37,9 @@ SYNOPSIS
         $client->delete_graph($graph_id);
 
 DESCRIPTION
-    Net::GraphSpace provides bindings for the GraphSpace API.
+    Net::GraphSpace provides bindings for the GraphSpace API. GraphSpace is
+    a web based graph/network visualization tool and data store. See
+    <http://graphspace.org> for more information.
 
 ATTRIBUTES
     Required:
@@ -74,6 +76,9 @@ METHODS
     $graph.
 
   delete_graph($graph_id)
+SEE ALSO
+    <http://graphspace.org>
+
 AUTHOR
     Naveed Massjouni <naveedm9@gmail.com>
 

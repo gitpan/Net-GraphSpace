@@ -2,7 +2,7 @@ package Net::GraphSpace;
 use Moose;
 use MooseX::Method::Signatures;
 
-our $VERSION = '0.0004'; # VERSION
+our $VERSION = '0.0005'; # VERSION
 
 use JSON qw(decode_json);
 use LWP::UserAgent;
@@ -88,7 +88,7 @@ Net::GraphSpace - API bindings for GraphSpace
 
 =head1 VERSION
 
-version 0.0004
+version 0.0005
 
 =head1 SYNOPSIS
 
@@ -126,6 +126,8 @@ version 0.0004
 =head1 DESCRIPTION
 
 Net::GraphSpace provides bindings for the GraphSpace API.
+GraphSpace is a web based graph/network visualization tool and data store.
+See L<http://graphspace.org> for more information.
 
 =head1 ATTRIBUTES
 
@@ -178,6 +180,14 @@ Returns a Net::GraphSpace::Graph object for the given $graph_id.
 Updates the graph on the server with id $graph_id by replacing it with $graph.
 
 =head2 delete_graph($graph_id)
+
+=head1 SEE ALSO
+
+=over
+
+=item L<http://graphspace.org>
+
+=back
 
 =head1 AUTHOR
 

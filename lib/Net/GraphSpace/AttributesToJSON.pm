@@ -30,7 +30,7 @@ Net::GraphSpace::AttributesToJSON
 
 =head1 VERSION
 
-version 0.0004
+version 0.0005
 
 =head1 AUTHOR
 
