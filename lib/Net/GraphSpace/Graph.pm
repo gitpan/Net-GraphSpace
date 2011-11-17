@@ -4,9 +4,11 @@ use MooseX::Method::Signatures;
 
 use Carp qw(croak);
 use JSON qw(decode_json);
+use Net::GraphSpace::Edge;
+use Net::GraphSpace::Node;
 use Net::GraphSpace::Types;
 
-has name        => (is => 'rw', isa => 'Str', required => 1);
+has name        => (is => 'rw', isa => 'Str');
 has description => (is => 'rw', isa => 'Str');
 has tags        => (is => 'rw', isa => 'ArrayRef');
 
@@ -59,7 +61,7 @@ method new_from_http_response($class: HTTP::Response $res) {
     my $data = decode_json($res->content);
 
     my $metadata = $data->{metadata};
-    my $graph = Net::GraphSpace::Graph->new(name => $metadata->{name});
+    my $graph = Net::GraphSpace::Graph->new();
     $graph->description($metadata->{description})
         if defined $metadata->{description};
     $graph->tags($metadata->{tags}) if defined $metadata->{tags};
@@ -87,12 +89,11 @@ Net::GraphSpace::Graph
 
 =head1 VERSION
 
-version 0.0005
+version 0.0006
 
 =head1 SYNOPSIS
 
     my $graph = Net::GraphSpace::Graph->new(
-        name => 'graph x15'
         description => 'a great graph',
         tags => ['foo', 'bar'],
     );
@@ -109,14 +110,6 @@ version 0.0005
 Represents a graph in GraphSpace.
 
 =head1 ATTRIBUTES
-
-Required:
-
-=over
-
-=item name
-
-=back
 
 Optional:
 

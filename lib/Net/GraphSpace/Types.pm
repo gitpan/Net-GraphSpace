@@ -19,7 +19,7 @@ Net::GraphSpace::Types
 
 =head1 VERSION
 
-version 0.0005
+version 0.0006
 
 =head1 AUTHOR
 
