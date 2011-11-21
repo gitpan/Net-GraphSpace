@@ -16,8 +16,7 @@ requires:
   JSON: 0
   LWP::UserAgent: 0
   Moose: 0
-  MooseX::Method::Signatures: 0
 resources:
   bugtracker: http://github.com/ironcamel/Net-GraphSpace/issues
   repository: git://github.com/ironcamel/Net-GraphSpace.git
-version: 0.0006
+version: 0.0007
