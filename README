@@ -2,7 +2,7 @@ NAME
     Net::GraphSpace - API bindings for GraphSpace
 
 VERSION
-    version 0.0007
+    version 0.0008
 
 SYNOPSIS
         use Net::GraphSpace;
@@ -12,7 +12,7 @@ SYNOPSIS
         my $client = Net::GraphSpace->new(
             user     => 'bob',
             password => 'secret',
-            host     => 'graphspace.org'
+            url      => 'http://graphspace.org'
         );
         my $graph = Net::GraphSpace::Graph->new(description => 'yeast ppi');
         my $node1 = Net::GraphSpace::Node->new(id => 'node-a', label => 'A');
@@ -35,7 +35,7 @@ SYNOPSIS
         print "Your graph (id: $graph_id) can be viewed at $url\n";
 
         # Get and update a graph
-        $graph = $clent->get_graph($graph_id)
+        $graph = $client->get_graph($graph_id)
             or die "Could not find graph $graph_id";
         $graph->tags(['foo', 'bar']);
         $client->update_graph($graph, $graph_id);
@@ -61,16 +61,7 @@ ATTRIBUTES
 
     Optional:
 
-    host
-        Defaults to 'graphspace.org'.
-
-    port
-        Defaults to 80.
-
-    prefix
-        Defaults to ''. Set this if GraphSpace is not hosted at the root of
-        your server. For example, if GraphSpace is hosted at
-        http://myserver.com/gs, then set "prefix => '/gs'".
+    url Defaults to 'http://graphspace.org'.
 
 METHODS
   new
@@ -79,10 +70,20 @@ METHODS
     Takes key/value arguments corresponding to the attributes above.
 
   get_graph
-        $graph = $clent->get_graph($graph_id)
+        $graph = $client->get_graph($graph_id)
 
     Returns a Net::GraphSpace::Graph object for the given $graph_id. Returns
     undef if the graph could not be found.
+
+  get_graphs
+        $graph = $client->get_graphs()
+        $graph = $client->get_graphs(tag => 'foo')
+
+    Given no arguments, returns all graphs for the logged in user. Given a
+    tag param, returns the corresponding graphs. Returns an arrayref of the
+    form:
+
+        [ { id => 1, url => 'http://...' }, { id => 2, url => 'http://...' } ]
 
   add_graph
         $data = $client->add_graph($graph);
@@ -99,10 +100,7 @@ METHODS
     exists, it will get overwritten as if update_graph() was called. Returns
     a hashref of the form:
 
-        {
-            id => 1,
-            url => 'http://...',
-        }
+        { id => 1, url => 'http://...' }
 
     The url is the location where the graph can be viewed. Dies on server
     error.

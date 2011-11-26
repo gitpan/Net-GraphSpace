@@ -10,7 +10,7 @@ has label    => (is => 'rw', isa => 'Str');
 has popup    => (is => 'rw', isa => 'Str');
 has color    => (is => 'rw', isa => 'Str');
 has width    => (is => 'rw', isa => 'Num');
-has graph_id => (is => 'rw', isa => 'Int');
+has graph_id => (is => 'rw', isa => 'Str');
 has labelFontWeight => (is => 'rw', isa => 'Str');
 
 
@@ -25,7 +25,7 @@ Net::GraphSpace::Edge
 
 =head1 VERSION
 
-version 0.0007
+version 0.0008
 
 =head1 SYNOPSIS
 
