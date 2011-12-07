@@ -19,4 +19,4 @@ requires:
 resources:
   bugtracker: http://github.com/ironcamel/Net-GraphSpace/issues
   repository: git://github.com/ironcamel/Net-GraphSpace.git
-version: 0.0008
+version: 0.0009

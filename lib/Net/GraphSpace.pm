@@ -1,7 +1,7 @@
 package Net::GraphSpace;
 use Moose;
 
-our $VERSION = '0.0008'; # VERSION
+our $VERSION = '0.0009'; # VERSION
 
 use v5.10;
 use JSON qw(decode_json);
@@ -131,7 +131,7 @@ Net::GraphSpace - API bindings for GraphSpace
 
 =head1 VERSION
 
-version 0.0008
+version 0.0009
 
 =head1 SYNOPSIS
 
